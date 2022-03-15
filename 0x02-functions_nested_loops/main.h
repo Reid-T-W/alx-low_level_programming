@@ -18,3 +18,10 @@ void print_alphabet(void);
  * Return: Void
  **/
 void print_alphabet_x10(void);
+/**
+*_islower - returns 1 if c is lowe case or 0 otherwise
+*@c: The charachter to be evaluated
+*
+*Return: On success 1
+**/
+int _islower(int c);
