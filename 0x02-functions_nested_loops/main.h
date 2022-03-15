@@ -32,3 +32,11 @@ int _islower(int c);
  * Return: On sucess 1
  **/
 int _isalpha(int c);
+/**
+ * print_sign - Prints the sign of a number
+ * @n: The integer to be evaluated
+ *
+ * Return: If positive returns 1, if negative returns -1, and if zero it returns 0
+**/
+int print_sign(int n);
+
