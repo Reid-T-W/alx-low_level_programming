@@ -39,4 +39,10 @@ int _isalpha(int c);
  * Return: If positive returns 1, if negative returns -1, and if zero it returns 0
 **/
 int print_sign(int n);
-
+/**
+ * _abs - determines the absolute value of a given number
+ * @n: The integer that is required to find its absolute value
+ *
+ * Return: Always success
+ * */
+int _abs(int n);
