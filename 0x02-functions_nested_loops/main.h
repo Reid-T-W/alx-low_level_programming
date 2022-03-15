@@ -17,4 +17,4 @@ void print_alphabet(void);
  *
  * Return: Void
  **/
-void print_alphabet-x10(void);
+void print_alphabet_x10(void);
