@@ -25,3 +25,10 @@ void print_alphabet_x10(void);
 *Return: On success 1
 **/
 int _islower(int c);
+/**
+ *_isalpha - returns 1 if c is an alphabet or 0 otherwise
+ *@c: The character to be evaluated
+ *
+ * Return: On sucess 1
+ **/
+int _isalpha(int c);
