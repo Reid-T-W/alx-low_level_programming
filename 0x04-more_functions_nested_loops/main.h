@@ -25,4 +25,11 @@ int _isdigit(int n);
  *Return: The multiplication value
  */
 int mul(int a, int b);
+#include "main.h"
+/**
+ *print_numbers - prints numbers 0 to 9
+ *
+ *Return: void
+ */
+void print_numbers(void);
 #endif /* MAIN_H */
