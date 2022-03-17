@@ -5,7 +5,7 @@
  *
  *Return: On success 1
  */
-int _isupper(int c);
+int _isupper(int c)
 {
 	if (c > 'A' && c < 'Z')
 	{
