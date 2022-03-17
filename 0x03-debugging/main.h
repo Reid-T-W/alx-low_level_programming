@@ -1,10 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdio.h>
-
-void positive_or_negative(int n);
-/* MAIN_H */
 /**
  *largest_number - returns the largest 3 numbers
  *@a: first integer
