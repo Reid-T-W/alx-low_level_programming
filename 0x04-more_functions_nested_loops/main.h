@@ -54,4 +54,11 @@ void print_most_numbers(void);
  *Return: void
  **/
 void more_numbers(void);
+/**
+ *print_line - Print a straight line
+ *@n: Length of the line
+ *
+ *Return: void
+ */
+void print_line(int n); 
 #endif /* MAIN_H */
