@@ -4,7 +4,6 @@
 #include <stdio.h>
 
 void positive_or_negative(int n);
-/* MAIN_H */
 /**
  *largest_number - returns the largest 3 numbers
  *@a: first integer
@@ -22,4 +21,4 @@ int largest_number(int a, int b, int c);
  *Return: void
  */
 void print_remaining_days(int month, int day, int year);
-#endif
+#endif /* MAIN_H */
