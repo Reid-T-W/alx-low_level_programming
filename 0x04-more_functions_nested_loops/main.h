@@ -48,4 +48,10 @@ int _putchar(char c);
  *Return: void
  */
 void print_most_numbers(void);
+/**
+ *more_numbers - prints numbers 0 to 14 ten times                                                        *
+ *
+ *Return: void
+ **/
+void more_numbers(void);
 #endif /* MAIN_H */
