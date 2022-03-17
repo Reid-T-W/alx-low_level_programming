@@ -3,7 +3,7 @@
  *@c: The charachter to be evaluated
  *
  *Return: On success 1
- **/
+ */
 int _isupper(int c);
 /**
  *_putchar - writes the character c to stdout
