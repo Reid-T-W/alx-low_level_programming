@@ -4,8 +4,7 @@
 #include <stdio.h>
 
 void positive_or_negative(int n);
-
-#endif /* MAIN_H */
+/* MAIN_H */
 /**
  *largest_number - returns the largest 3 numbers
  *@a: first integer
@@ -13,5 +12,5 @@ void positive_or_negative(int n);
  *@c: third integer
  *Return: largest number
  */
-
 int largest_number(int a, int b, int c);
+#endif
