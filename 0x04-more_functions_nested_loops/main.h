@@ -60,5 +60,12 @@ void more_numbers(void);
  *
  *Return: void
  */
-void print_line(int n); 
+void print_line(int n);
+/**
+ *print_diagonal - Prints a diagonal line
+ *@n: Length of the line
+ *
+ *Return: void
+ **/
+void print_diagonal(int n);
 #endif /* MAIN_H */
