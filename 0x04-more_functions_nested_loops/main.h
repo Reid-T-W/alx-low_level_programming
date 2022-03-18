@@ -68,4 +68,11 @@ void print_line(int n);
  *Return: void
  **/
 void print_diagonal(int n);
+/**
+ *print_square - prints squares
+ *@size: size of the square
+ *
+ *Return: void
+ */
+void print_square(int size);
 #endif /* MAIN_H */
