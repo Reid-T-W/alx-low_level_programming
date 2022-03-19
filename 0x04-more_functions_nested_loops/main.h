@@ -82,4 +82,11 @@ void print_square(int size);
  *return: void
  **/
 void print_triangle(int size);
+/**
+ *print_number - prints integers
+ *@n: integer to be printed
+ *
+ *Return: void
+ */
+void print_number(int n);
 #endif /* MAIN_H */
