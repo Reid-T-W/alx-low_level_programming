@@ -14,7 +14,7 @@ void print_number(int n)
 	if (n < 0)
 	{
 		n = -1 * n;
-	}	
+	}
 	while (n / 10 != 0)
 	{
 		reserved = (reserved * 10) + (n % 10);
@@ -22,7 +22,7 @@ void print_number(int n)
 	}
 	reserved = (reserved * 10) + (n % 10);
 	if (original < 0)
-		_putchar('-');
+		_putchar(45);
 	while (reserved / 10 != 0)
 	{
 		_putchar((reserved % 10) + 48);
