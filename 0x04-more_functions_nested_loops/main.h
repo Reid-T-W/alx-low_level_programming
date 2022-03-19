@@ -75,4 +75,11 @@ void print_diagonal(int n);
  *Return: void
  */
 void print_square(int size);
+/**
+ *print_triangle - prints a traingle
+ *@size: size of the traingle
+ *
+ *return: void
+ **/
+void print_triangle(int size);
 #endif /* MAIN_H */
