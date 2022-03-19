@@ -29,5 +29,4 @@ void print_number(int n)
 		reserved = reserved / 10;
 	}
 	_putchar((reserved % 10) + 48);
-	_putchar('\n');
 }
