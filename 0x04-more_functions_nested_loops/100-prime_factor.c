@@ -9,14 +9,15 @@ int main(void)
 
 	while (num > 1)
 	{
-		if(num % c == 0)
-		{	if (c > largest)
+		if (num % c == 0)
+		{
+			if (c > largest)
 				largest = c;
 			num = num / c;
 		}
 		else
 			c++;
 	}
-	printf("%d", largest);
+	printf("%d\n", largest);
 	return (0);
 }
