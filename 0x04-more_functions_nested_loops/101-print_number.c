@@ -1,10 +1,10 @@
 #include "main.h"
 /**
-*print_number - prints integers
-*@n: integer to be printed
-*
-*return: void
-*/
+ *print_number - prints integers
+ *@n: integer to be printed
+ *
+ *return: void
+ */
 void print_number(int n)
 {
 	int reserved = 0;
