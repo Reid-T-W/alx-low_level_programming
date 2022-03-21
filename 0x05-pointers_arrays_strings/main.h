@@ -45,4 +45,11 @@ void _puts(char *str);
 *Return: void
 */
 void print_rev(char *s);
+/**
+*rev_string - reverse string
+*@s: string to be reversed
+*
+*Return: void
+*/
+void rev_string(char *s);
 #endif /* MAIN_H */
