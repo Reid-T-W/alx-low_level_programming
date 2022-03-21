@@ -2,7 +2,8 @@
 #include <string.h>
 
 /**
- *rev_string - reverse string                                            *@s: string to be reversed
+ *rev_string - reverse string
+ *@s: string to be reversed
  *
  *Return: void
  */
