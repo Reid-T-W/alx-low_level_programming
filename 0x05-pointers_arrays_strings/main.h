@@ -69,7 +69,7 @@ void puts_half(char *str);
 /**
 *print_array - prints the elements of an array
 *@a: array to be printed
-*n: number of elements to print from the array
+*@n: number of elements to print from the array
 *Return: void
 */
 void print_array(int *a, int n);
