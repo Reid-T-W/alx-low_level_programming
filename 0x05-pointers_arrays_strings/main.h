@@ -80,4 +80,11 @@ void print_array(int *a, int n);
 *Return: charcter pointer
 */
 char *_strcpy(char *dest, char *src);
+/**
+*_atoi - convert strubg to integer
+*@s - string to be converted
+*
+*Return: Always 0
+*/
+int _atoi(char *s);
 #endif /* MAIN_H */
