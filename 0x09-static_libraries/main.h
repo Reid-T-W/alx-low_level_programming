@@ -65,7 +65,7 @@ char *_strncat(char *dest, char *src, int n);
 *_strncpy - not sure
 *@dest: param
 *@src: param
-*@n: param   
+*@n: param
 *Return: returns char
 */
 char *_strncpy(char *dest, char *src, int n);
