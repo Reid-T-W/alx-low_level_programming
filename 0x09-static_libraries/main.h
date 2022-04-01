@@ -138,7 +138,7 @@ void swap_int(int *a, int *b);
 *_strlen - determine length of string
 *@s: string
 *
-*Retrun: Length of string
+*Return: Length of string
 */
 int _strlen(char *s);
 /**
@@ -192,7 +192,7 @@ void print_array(int *a, int n);
 char *_strcpy(char *dest, char *src);
 /**
 *_atoi - convert strubg to integer
-*@s - string to be converted
+*@s: string to be converted
 *
 *Return: Always 0
 */
