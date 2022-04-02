@@ -6,4 +6,5 @@ done
 for j in ./object_files/*.o
 do
 	ar rc liball.a "$j"
-done	
+done
+
