@@ -23,4 +23,12 @@ struct dog
  *Return: Always 0
  */
 void init_dog(struct dog *d, char *name, float age, char *owner);
+/**
+ *print_dog - print the values of struct dog
+ *@d:param
+ *
+ *
+ *Return: Always 0
+ */
+void print_dog(struct dog *d);
 #endif /* DOG_HEADER */
