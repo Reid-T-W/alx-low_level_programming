@@ -9,10 +9,8 @@
  */
 void print_dog(struct dog *d)
 {
-	if (d == 0)
-		return;
-	else
-	{
+	if (d != 0)
+	{	
 		if (d->name != 0)
 			printf("Name: %s\n", d->name);
 		else if (d->name == 0)
