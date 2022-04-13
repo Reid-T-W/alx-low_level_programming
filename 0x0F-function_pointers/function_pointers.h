@@ -16,4 +16,12 @@ void print_name(char *name, void (*f)(char *));
  *Return: void
  */
 void array_iterator(int *array, size_t size, void (*action)(int));
+/**
+ *int_index - Function that searches for an integer
+ *@array: array to be searched
+ *@size: size of array
+ *@cmp: function parameter
+ *Return: Returns index of integer
+ */
+int int_index(int *array, int size, int (*cmp)(int));
 #endif /* HEADER_FUNCTION_POINTER */
