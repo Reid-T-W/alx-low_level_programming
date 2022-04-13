@@ -46,10 +46,5 @@ int op_div(int a, int b);
  *Return: int
  */
 int op_mod(int a, int b);
-/**
- *get_op_func - determine the correct operation to be performed
- *@s: operation to be evaluated
- *Return: Function Pointer
- */
 int (*get_op_func(char *s))(int, int);
 #endif /* HEADER_OPERATION */
