@@ -29,6 +29,11 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
+	if ((*s == '/' || *s == '%') && second == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	result = get_op_func(s)(first, second);
 	printf("%d\n", result);
 	return (0);
