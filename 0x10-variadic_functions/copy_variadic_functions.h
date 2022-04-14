@@ -26,4 +26,20 @@ void print_strings(const char *separator, const unsigned int n, ...);
  *Return: void
  */
 void print_all(const char * const format, ...);
+/**
+ *find_command - find the coommand
+ *@command: parameter
+ *Return: void
+ */
+void find_command(int command);
+/**
+ *find_command - find the command
+ *@i: param
+ *@format_len: param
+ *@form: param
+ *@args: param
+ *@command: parameter
+ *Return: void
+ */
+void find_command(int i, int format_len, int command, const char *form, va_list args);
 #endif /* HEADER_VARIADIC_FUNCTIONS */
