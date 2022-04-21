@@ -20,7 +20,7 @@ else
 {
 printf("[0] (nil)\n");
 }
-h = h -> next;
+h = h->next;
 }
 return (nodes);
 }
