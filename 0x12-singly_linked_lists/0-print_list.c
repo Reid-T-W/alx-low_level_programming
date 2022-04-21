@@ -12,7 +12,7 @@ int nodes = 0;
 while (h != 0)
 {
 nodes++;
-if (h->str != 0 && h->len != 0)
+if (h->str != 0)
 {
 printf("[%d] %s\n", h->len, h->str);
 }
