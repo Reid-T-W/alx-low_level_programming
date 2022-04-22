@@ -7,11 +7,15 @@
  */
 void free_list(list_t *head)
 {
-list_t *copy = head;
+list_t *copy;
+if (head == NULL)
+{
+return;
+}
 while (head != NULL)
 {
-copy = copy->next;
-free(head);
-head = copy;
+copy = head;
+head = head->next;
+free(copy);
 }
 }
