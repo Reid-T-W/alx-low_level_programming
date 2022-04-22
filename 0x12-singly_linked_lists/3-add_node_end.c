@@ -59,6 +59,8 @@ free(new);
 return (NULL);
 }
 new->str = strdup(str);
+if (new->str == 0)
+free(new);
 new->len = string_len;
 new->next = NULL;
 if (*head != 0)
