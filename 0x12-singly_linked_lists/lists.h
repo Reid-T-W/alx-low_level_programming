@@ -53,4 +53,9 @@ list_t *add_node_end(list_t **head, const char *str);
  *Return: void
  */
 void free_list(list_t *head);
+/**
+ *print_before_main - function to be executed before main
+ *Return: void
+ */
+void print_before_main(void) __attribute__((constructor));
 #endif /* HEADER_LINKEDLIST */
