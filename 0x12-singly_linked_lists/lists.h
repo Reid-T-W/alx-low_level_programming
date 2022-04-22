@@ -26,4 +26,17 @@ size_t print_list(const list_t *h);
  *Return: returns the number of elements in a linked list
  */
 size_t list_len(const list_t *h);
+/**
+ *add_node - adds a new node
+ *@head: head of linked list
+ *@str: string to be added to node
+ *Return: address of newly added node
+ */
+list_t *add_node(list_t **head, const char *str);
+/**
+ *string_length - determines the length of a string
+ *@str: input string
+ *Return: length of string
+ */
+int string_length(const char *str);
 #endif /* HEADER_LINKEDLIST */
