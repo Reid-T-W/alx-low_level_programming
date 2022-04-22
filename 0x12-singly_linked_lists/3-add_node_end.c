@@ -50,7 +50,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 int string_len;
 list_t *new;
-list_t **copy = head;
+list_t *copy = *head;
 string_len = string_length(str);
 new = malloc(sizeof(list_t));
 if (new == 0 || str == 0)
@@ -58,22 +58,23 @@ if (new == 0 || str == 0)
 return (NULL);
 }
 new->str = strdup(str);
-printf("[%d] %s\n", string_len, new->str);
 new->len = string_len;
+new->next = NULL;
 if (*head != 0)
 {
-while ((*copy)->next != 0)
+while ((copy)->next != 0)
 {
-*copy = (*copy)->next;
+copy = copy->next;
 }
-new->next = (*copy)->next;
-(*copy)->next = new;
+new->next = (copy)->next;
+copy->next = new;
 if (copy != 0)
-return (*copy);
+{
+return (*head);
+}
 else
 return (NULL);
 }
-if (add_node(head, str) == 0)
-return (NULL);
+else
 return (add_node(head, str));
 }
