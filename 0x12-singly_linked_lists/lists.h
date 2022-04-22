@@ -47,4 +47,10 @@ int string_length(const char *str);
  *Return: addresss of new node
  */
 list_t *add_node_end(list_t **head, const char *str);
+/**
+ *free_list - free's the memory of a linked list
+ *@head: head of a linked list
+ *Return: void
+ */
+void free_list(list_t *head);
 #endif /* HEADER_LINKEDLIST */
