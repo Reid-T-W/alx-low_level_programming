@@ -1,5 +1,6 @@
 #ifndef HEADER_LINKEDLIST
 #define HEADER_LINKEDLIST
+#include <stddef.h>
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -39,4 +40,11 @@ list_t *add_node(list_t **head, const char *str);
  *Return: length of string
  */
 int string_length(const char *str);
+/**
+ *add_node_end - adds a node to the end of a linked list
+ *@head: head of linked list
+ *@str: string to be added to node
+ *Return: addresss of new node
+ */
+list_t *add_node_end(list_t **head, const char *str);
 #endif /* HEADER_LINKEDLIST */

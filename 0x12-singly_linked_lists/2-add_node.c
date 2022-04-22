@@ -2,21 +2,6 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- *string_length - determines the length of a string
- *@str: input string
- *Return: length of string
- */
-int string_length(const char *str)
-{
-int count = 0;
-while (*str != '\0')
-{
-count++;
-str = str + 1;
-}
-return (count);
-}
-/**
  *add_node - adds a new node
  *@head: head of linked list
  *@str: string to be added to node
