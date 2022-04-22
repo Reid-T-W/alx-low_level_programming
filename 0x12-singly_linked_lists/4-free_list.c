@@ -1,3 +1,4 @@
+
 #include "lists.h"
 #include <stdlib.h>
 /**
@@ -8,14 +9,12 @@
 void free_list(list_t *head)
 {
 list_t *copy;
-if (head == NULL)
-{
-return;
-}
+
 while (head != NULL)
 {
 copy = head;
 head = head->next;
 free(copy);
 }
+head = NULL;
 }
