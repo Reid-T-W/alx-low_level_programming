@@ -55,6 +55,7 @@ string_len = string_length(str);
 new = malloc(sizeof(list_t));
 if (new == 0 || str == 0)
 {
+free(new);
 return (NULL);
 }
 new->str = strdup(str);
