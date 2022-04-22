@@ -73,5 +73,7 @@ return (*copy);
 else
 return (NULL);
 }
+if (add_node(head, str) == 0)
+return (NULL);
 return (add_node(head, str));
 }
