@@ -58,4 +58,11 @@ void free_listint2(listint_t **head);
  *Return: returns the head nodes data or 0 for empty list
  */
 int pop_listint(listint_t **head);
+/**
+ *get_nodeint_at_index - returns the nth node of a linked list
+ *@head: head of linked list
+ *@index: index to be returned
+ *Return: nth node of a linked list
+ */
+listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
