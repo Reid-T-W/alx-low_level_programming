@@ -20,4 +20,10 @@ struct listint_s *next;
  *Return: number of items printed
  */
 size_t print_listint(const listint_t *h);
+/**
+ *listint_len - determines the length of a linked list
+ *@h: head of linked list
+ *Return:number of elements in a linked list
+ */
+size_t listint_len(const listint_t *h);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
