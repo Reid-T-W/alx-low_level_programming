@@ -46,4 +46,10 @@ listint_t *add_nodeint_end(listint_t **head, const int n);
  *Return: void
  */
 void free_listint(listint_t *head);
+/**
+ *free_listint2 - free a linked list from memory
+ *@head: pointer to pointer of head of linked list
+ *Return: void
+ */
+void free_listint2(listint_t **head);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
