@@ -65,4 +65,10 @@ int pop_listint(listint_t **head);
  *Return: nth node of a linked list
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
+/**
+ *sum_listint - returns the sum of all the data of a linked list
+ *@head: head of linked list
+ *Return: sum of data
+ */
+int sum_listint(listint_t *head);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
