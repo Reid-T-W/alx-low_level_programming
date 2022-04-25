@@ -18,4 +18,6 @@ copy = *head;
 free(copy);
 }
 *head = NULL;
+head = NULL;
+copy = NULL;
 }
