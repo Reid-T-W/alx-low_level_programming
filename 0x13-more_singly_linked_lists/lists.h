@@ -34,10 +34,16 @@ size_t listint_len(const listint_t *h);
  */
 listint_t *add_nodeint(listint_t **head, const int n);
 /**
- *add_nodeint_end - adds a node to the end of a linked list 
+ *add_nodeint_end - adds a node to the end of a linked list
  *@head: head of the linked list
  *@n: number to be added
  *Return: Returns the address of the new element
  */
 listint_t *add_nodeint_end(listint_t **head, const int n);
+/**
+ *free_listint - free a linked list from memory
+ *@head: head of linked list
+ *Return: void
+ */
+void free_listint(listint_t *head);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
