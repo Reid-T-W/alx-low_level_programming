@@ -17,5 +17,5 @@ copy = *head;
 *head = (*head)->next;
 free(copy);
 }
-head = NULL;
+*head = NULL;
 }
