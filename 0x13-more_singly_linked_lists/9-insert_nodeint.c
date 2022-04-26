@@ -16,7 +16,7 @@ unsigned int counter = 1;
 
 new = malloc(sizeof(listint_t));
 new->n = n;
-if (*head == NULL || new == NULL)
+if ((*head == NULL && idx != 0) || new == NULL)
 {
 free(new);
 copy = NULL;
