@@ -22,6 +22,11 @@ free(new);
 copy = NULL;
 return (NULL);
 }
+if (*head == NULL && idx == 0)
+{
+*head = new;
+return (new);
+}
 if (idx == 0)
 {
 copy = NULL;
