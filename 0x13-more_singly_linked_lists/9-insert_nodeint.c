@@ -24,6 +24,7 @@ return (NULL);
 }
 if (idx == 0)
 {
+copy = NULL;
 new->next = *head;
 *head = new;
 return (new);
