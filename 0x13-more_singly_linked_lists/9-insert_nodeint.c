@@ -26,7 +26,7 @@ if (idx == 0)
 {
 new->next = *head;
 *head = new;
-return (*head);
+return (new);
 }
 while (copy != NULL)
 {
@@ -35,7 +35,7 @@ if (counter == idx)
 new->next = copy->next;
 copy->next = new;
 copy = NULL;
-return (*head);
+return (new);
 }
 copy = copy->next;
 counter++;
