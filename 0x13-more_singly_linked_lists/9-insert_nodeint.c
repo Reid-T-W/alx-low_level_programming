@@ -19,6 +19,7 @@ new->n = n;
 if (*head == NULL || new == NULL)
 {
 free(new);
+copy = NULL;
 return (NULL);
 }
 if (idx == 0)
@@ -27,20 +28,19 @@ new->next = *head;
 *head = new;
 return (*head);
 }
-while (counter != idx && copy->next != NULL)
+while (copy != NULL)
 {
-copy = copy->next;
-counter++;
-}
 if (counter == idx)
 {
 new->next = copy->next;
 copy->next = new;
-}
-else
-{
-free(new);
-return (NULL);
-}
+copy = NULL;
 return (*head);
+}
+copy = copy->next;
+counter++;
+}
+free(new);
+copy = NULL;
+return (NULL);
 }
