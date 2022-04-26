@@ -11,7 +11,7 @@ listint_t *copy = *head;
 listint_t *prev = *head;
 
 if (*head == NULL)
-return (*head);
+return (NULL);
 copy = copy->next;
 prev = prev->next;
 copy = copy->next;
