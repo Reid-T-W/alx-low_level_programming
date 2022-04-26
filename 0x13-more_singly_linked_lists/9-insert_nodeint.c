@@ -17,7 +17,10 @@ unsigned int counter = 1;
 new = malloc(sizeof(listint_t));
 new->n = n;
 if (*head == NULL || new == NULL)
+{
+free(new);
 return (NULL);
+}
 if (idx == 0)
 {
 new->next = *head;
@@ -36,6 +39,7 @@ copy->next = new;
 }
 else
 {
+free(new);
 return (NULL);
 }
 return (*head);
