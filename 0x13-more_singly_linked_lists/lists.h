@@ -71,4 +71,12 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index);
  *Return: sum of data
  */
 int sum_listint(listint_t *head);
+/**
+ *insert_nodeint_at_index - inserts a new node at an index
+ *@head: head of linked list
+ *@idx: index
+ *@n: number
+ *Return: the address of the new node, or NULL if it failed
+ */
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n);
 #endif /* HEADER_MORE_SINGLY_LINKED_LIST */
