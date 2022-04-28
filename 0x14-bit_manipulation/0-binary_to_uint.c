@@ -37,6 +37,8 @@ int len;
 int value;
 const char *c = b;
 
+if (b == NULL)
+return (0);
 len = strlen(b);
 for (i = 0; i < len; i++)
 {
