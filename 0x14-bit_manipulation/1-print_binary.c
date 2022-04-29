@@ -7,10 +7,10 @@
  *@b: power exponent
  *Return: returns the powers of a given number
  */
-int power(int a, int b)
+unsigned long int power(unsigned long int a, int b)
 {
 int i;
-int pow = a;
+unsigned long int pow = a;
 
 if (b == 0)
 {
@@ -18,7 +18,7 @@ pow = 1;
 }
 for (i = 0; i < b - 1; i++)
 {
-pow = pow *a;
+pow = pow * a;
 }
 return (pow);
 }
@@ -29,10 +29,11 @@ return (pow);
  */
 void print_binary(unsigned long int n)
 {
-unsigned long int counter = 0;
+int counter = 0;
 unsigned long int n_length = n;
-int checker;
-unsigned long int i = 1;
+unsigned long int checker = 0;
+int i = 1;
+
 if (n == 0)
 _putchar('0');
 while (n_length > 0)

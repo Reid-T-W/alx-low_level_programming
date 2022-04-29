@@ -6,7 +6,7 @@
  *@b: power exponent
  *Return: returns the powers of a given number
  */
-int power(int a, int b);
+unsigned long int power(unsigned long int a, int b);
 /**
  *binary_to_uint - function that converts a binary to an unsigned int
  *@b: binary
