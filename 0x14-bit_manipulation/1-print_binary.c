@@ -18,7 +18,7 @@ pow = 1;
 }
 for (i = 0; i < b - 1; i++)
 {
-pow = pow * a;
+pow = pow *a;
 }
 return (pow);
 }
