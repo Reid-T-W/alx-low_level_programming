@@ -14,13 +14,13 @@ while (n_length > 0)
 length++;
 n_length = n_length >> 1;
 }
-if (index >= length)
-return (-1);
 n = n >> index;
 if ((n & 1) == 0)
 return (0);
 else if ((n & 1) == 1)
 return (1);
+else if (index >= length)
+return (-1);
 else
 return (-1);
 }
