@@ -28,7 +28,7 @@ read_success = read(file_desc, buf, letters);
 if (read_success == -1)
 return (0);
 actual_letters_write = write(STDOUT_FILENO, buf, read_success);
-if (actual_letters_write == -1)
+if (actual_letters_write == -1 || actual_letters_write != read_success)
 return (0);
 return (actual_letters_write);
 }
