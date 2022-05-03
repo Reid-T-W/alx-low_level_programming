@@ -18,6 +18,7 @@ int file_desc;
 int read_success = 0;
 char *buf;
 
+letters++;
 if (filename == NULL)
 return (0);
 buf = malloc(sizeof(size_t) * letters);
