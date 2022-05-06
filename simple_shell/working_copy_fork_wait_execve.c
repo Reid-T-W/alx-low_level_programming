@@ -17,18 +17,22 @@ int main(void)
   
   while (i < 5)
     {
-      child_pid = fork();
+      if (child_pid != 0 && child_pid != -1)
+	{
+	  printf("In fork\n");
+	  child_pid = fork();
+	}
       if (child_pid == -1)
 	{
 	  perror("Error:");
 	  return (1);
 	}
-      if (child_pid == 0)
+      if (child_pid == 0 && i == 4)
 	{
 	  printf("Please wait child executing\n");
 	  execve(argv[0], argv, NULL);
 	}
-      else
+      else if (child_pid != 0 && child_pid != -1)
 	{
 	  wait(&status);
 	  printf("Under parent control, creating new child\n"); 
