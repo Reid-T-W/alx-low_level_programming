@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
       else
 	{
 	  wait(&status);
-	  printf("parent");
+	  printf("parent\n");
 	}
     }
   return (0);
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 void  INThandler()
 {
 /*signal(sig, SIG_IGN);*/
-    printf("In handler");
+    printf("In handler\n");
     kill(getppid(), 15);
     /* run = 0;*/
 }
