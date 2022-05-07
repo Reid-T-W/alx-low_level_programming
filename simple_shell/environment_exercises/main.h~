@@ -1,0 +1,5 @@
+#ifndef HEADER_GETENV
+#define HEADER_GETENV
+int _strcmp(const char *str1, const char *str2);
+char *_getenv(const char *name);
+#endif /* HEADER_GETENV */

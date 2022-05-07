@@ -1,0 +1,57 @@
+#include <stdio.h
+#include <string.h>
+#include "main.h"
+
+extern char **environ;
+
+/* int _strcmp(char *str1, char *str2);*/
+  
+void _printpath()
+{
+  int found = 1;
+  const char *str1;
+  /*char *copy_environ;*/
+  const char *name = "PATH";
+  
+  while(*environ != NULL)
+    {
+      /* copy_environ = *environ;*/
+      /*str1 = strtok(*environ,"=:");*/
+      found = _strcmp(*environ, name);
+      if (found == 0)
+	{
+	  str1 = strtok(*environ,"=:");   
+	  if (str1 == NULL)
+	    {
+	      return;
+	    }
+	  else if (str1 != NULL)
+	    {
+	      printf("%s", str1);
+	    }
+	}
+      environ++;
+    }
+  return;
+}
+
+int _strcmp(const char *str1, const char *str2)
+{
+  int similar = 1;
+  
+  while (*str1 == *str2)
+    {
+      str1++;
+      str2++;
+      if(*str1 == '=' && *str2 == '\0')
+	{
+	  similar = 0;
+	  return similar;
+	}
+      else if(*str1 == '=' || *str2 == '\0')
+	  {
+	    return similar;
+	  } 
+    }
+      return similar;
+}
