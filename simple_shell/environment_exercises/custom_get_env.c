@@ -29,7 +29,6 @@ char *_getenv(const char *name)
 int _strcmp(const char *str1, const char *str2)
 {
   int similar = 1;
-  
   while (*str1 == *str2)
     {
       str1++;

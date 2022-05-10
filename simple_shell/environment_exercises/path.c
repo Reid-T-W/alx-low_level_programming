@@ -1,35 +1,51 @@
+
 #include <stdio.h>
 #include <string.h>
 #include "main.h"
 
 extern char **environ;
 
-/* int _strcmp(char *str1, char *str2);*/
   
 void _printpath()
 {
   int found = 1;
-  const char *str1;
-  /*char *copy_environ;*/
   const char *name = "PATH";
-  
+  char *environ_copy;
+  char **end;
   while(*environ != NULL)
     {
-      /* copy_environ = *environ;*/
-      /*str1 = strtok(*environ,"=:");*/
       found = _strcmp(*environ, name);
+      
       if (found == 0)
 	{
-	  str1 = strtok(*environ,"=:");
-	  while (str1 != NULL)
+	  /*Setting an end of string at the end of the PATH string*/
+	  end = environ + 1;
+	  **end = '\0';
+	  /* Printing the environment variables and its values */
+	  environ_copy = *environ;
+	  printf("%s\n", *environ);
+	  
+	  /* Discarding the part before the equal sign */
+	  while(*environ_copy != '=')
 	    {
-	      printf("%s\n", str1);
-	      str1 = strtok(*environ,"=:");
+	      environ_copy++;
 	    }
-	  if (str1 == NULL)
-	    {
-	      return;
+	  environ_copy++;
+	  *environ = environ_copy;
+
+	  /*Separately printing strings deliminated by a :*/
+	  while (**environ != '\0')
+	    { 
+	      while(*environ_copy != ':' && *environ_copy != '\0')
+		{
+		  environ_copy++;
+		}
+	      *environ_copy = '\0';
+	      printf("%s\n", *environ);
+	      environ_copy++;
+	      *environ = environ_copy;
 	    }
+	  return;
 	}
       environ++;
     }
