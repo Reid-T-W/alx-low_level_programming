@@ -4,6 +4,8 @@
 #include <sys/wait.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include "main.h"
 
 void INThandler();
 
@@ -45,7 +47,12 @@ int main(int argc, char *argv[])
 	      argv[j] = NULL;
 	      if (execve(argv[0], argv, NULL) == -1)
 		{
-		  perror("Error:");
+		  argv[0] = check_path(argv);
+		  printf("Main function %s\n", argv[0]);
+		  if (execve(argv[0], argv, NULL) == -1)
+		    {
+		      perror("Error:");
+		    }
 		}
 	      free(line);
 	      printf("Returned %d\n",getpid());
@@ -71,3 +78,48 @@ void  INThandler()
     /* run = 0;*/
 }
 
+
+char *check_path(char *command[])
+{
+  list_t *head = NULL;
+  list_t *head_copy = head;
+  char *temp;
+  struct stat st;
+
+  _build_path_linkedlist(&head);
+  while (head_copy != NULL)
+    {
+      temp = _strcat(head_copy->str, command[0]);
+      if (stat(temp, &st) == 0)
+	{
+	  return temp;
+	}
+      else
+	{
+	  head_copy = head_copy -> next;
+	}
+    }
+  return command[0];
+}
+
+char * _strcat(char *dest, char *source)
+{
+  char *dest_copy = dest;
+  char *source_copy = source;
+  
+  while(*dest_copy != '\0')
+    {
+      dest_copy++;
+    }
+  *dest_copy = '/';
+  dest_copy++;
+  while (*source_copy != '\0')
+    {
+      *dest_copy = *source_copy;
+      source_copy++;
+      dest_copy++;
+    }
+  *source_copy = '\0';
+  return dest;
+}
+  
