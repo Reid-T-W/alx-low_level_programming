@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
   int status;
   char *token;
   int j = 0;
+  char **argv_copy;
 
 
   signal(SIGINT, INThandler);
@@ -36,27 +37,35 @@ int main(int argc, char *argv[])
 	      line[nread - 1] = '\0';
 	      token = strtok(line, " ");
 	      j = 0;
+	      argv_copy = malloc(sizeof(line)+1);
 	      while (token != NULL)
 		{
-		  argv[j] = token;
+		    /*argv[j] = token;*/
+		  argv_copy[j] = token;
 		  token = strtok(NULL, " ");
-		  argc++;
+		  /*printf("Token %s\n",token);*/
+
+		  /*argc++;*/
 		  j++;
 		}
-	      argc--;
-	      argv[j] = NULL;
-	      while (argv != NULL)
+	      /*argc--;*/
+	      argv_copy[j] = NULL;
+	      /*while (argv != NULL)
 		{
-		  printf(*argv);
+		  printf("argv %s\n",*argv);
 		  argv++;
-		}
-	      if (execve(argv[0], argv, NULL) == -1)
+		}*/
+	      if (execve(argv_copy[0], argv_copy, NULL) == -1)
 		{
-		  argv[0] = check_path(argv[0]);
-		  printf("Main function %s\n", argv[0]);
-		  printf("Argv %s: ", argv[0]);
-		  
-		  if (execve(argv[0], argv, NULL) == -1)
+		  argv_copy[0] = check_path(argv_copy[0]);
+		  printf("Main function %s\n", argv_copy[0]);
+		
+		  /*while (argv != NULL)
+		    {
+		      printf("loop argv: %s\n",*argv);
+		      argv++;
+		    }*/
+		  if (execve(argv_copy[0], argv_copy, NULL) == -1)
 		    {
 		      perror("Error:");
 		    }
@@ -94,12 +103,18 @@ char *check_path(char *command)
   struct stat st;
 
   _build_path_linkedlist(&head);
+  /*printf("Head %s\n", head->str);
+  head = head -> next;
+  printf("Head %s\n", head->str);*/
   head_copy = head;
-  printf("Temp upper: %s",command);
+  /*printf("Temp upper: %s\n",command);
+  printf("head copy string %s\n", head_copy->str);
+  printf("head_copy 1 \n");*/
   while (head_copy != NULL)
     {
+      printf("In while loop\n");
       temp = _strcat(head_copy->str, command);
-      printf("Temp: %s\n",temp); 
+      printf("Temp: %s",temp); 
       if (stat(temp, &st) == 0)
 	{
 	  return temp;
@@ -109,7 +124,7 @@ char *check_path(char *command)
 	  head_copy = head_copy -> next;
 	}
     }
-  printf("Reached here\n");
+  printf("Reached Here");
   return command;
 }
 

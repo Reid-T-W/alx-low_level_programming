@@ -39,6 +39,6 @@ int _strcmp(const char *str1, const char *str2);
 void _printpath();
 void _build_path_linkedlist(list_t **head);
 /*char *check_path(char *command[]);*/
-char *check_path(char *command[]);
+char *check_path(char *command);
 char *_strcat(char *dest, char *source);
 #endif /*HEADER_SIMPLE_SHELL*/

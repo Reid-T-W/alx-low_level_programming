@@ -43,6 +43,11 @@ int main(int argc, char *argv[])
 		}
 	      argc--;
 	      argv[j] = NULL;
+	      /*while (argv != NULL)
+		{
+		  printf("argv %s\n",*argv);
+		  argv++;
+		}*/
 	      if (execve(argv[0], argv, NULL) == -1)
 		{
 		  perror("Error:");

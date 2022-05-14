@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
   int status;
   char *token;
   int j = 0;
+  char **argv_copy;
 
 
   signal(SIGINT, INThandler);
@@ -36,27 +37,18 @@ int main(int argc, char *argv[])
 	      line[nread - 1] = '\0';
 	      token = strtok(line, " ");
 	      j = 0;
+	      argv_copy = malloc(sizeof(line)+1);
 	      while (token != NULL)
 		{
-		  argv[j] = token;
+		  argv_copy[j] = token;
 		  token = strtok(NULL, " ");
-		  argc++;
 		  j++;
 		}
-	      argc--;
-	      argv[j] = NULL;
-	      while (argv != NULL)
+	      argv_copy[j] = NULL;
+	      if (execve(argv_copy[0], argv_copy, NULL) == -1)
 		{
-		  printf(*argv);
-		  argv++;
-		}
-	      if (execve(argv[0], argv, NULL) == -1)
-		{
-		  argv[0] = check_path(argv[0]);
-		  printf("Main function %s\n", argv[0]);
-		  printf("Argv %s: ", argv[0]);
-		  
-		  if (execve(argv[0], argv, NULL) == -1)
+		  argv_copy[0] = check_path(argv_copy[0]);
+		  if (execve(argv_copy[0], argv_copy, NULL) == -1)
 		    {
 		      perror("Error:");
 		    }
@@ -79,10 +71,8 @@ int main(int argc, char *argv[])
 /*Signal Handler*/
 void  INThandler()
 {
-/*signal(sig, SIG_IGN);*/
     printf("In handler\n");
     kill(getppid(), 15);
-    /* run = 0;*/
 }
 
 
@@ -95,11 +85,9 @@ char *check_path(char *command)
 
   _build_path_linkedlist(&head);
   head_copy = head;
-  printf("Temp upper: %s",command);
   while (head_copy != NULL)
     {
       temp = _strcat(head_copy->str, command);
-      printf("Temp: %s\n",temp); 
       if (stat(temp, &st) == 0)
 	{
 	  return temp;
@@ -109,7 +97,6 @@ char *check_path(char *command)
 	  head_copy = head_copy -> next;
 	}
     }
-  printf("Reached here\n");
   return command;
 }
 
@@ -131,7 +118,6 @@ char * _strcat(char *dest, char *source)
       dest_copy++;
     }
   *source_copy = '\0';
-  printf(" In destination %s\n",dest);
   return dest;
 }
   
