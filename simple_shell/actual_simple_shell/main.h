@@ -38,7 +38,10 @@ size_t print_list(const list_t *h);
 int _strcmp(const char *str1, const char *str2);
 void _printpath();
 void _build_path_linkedlist(list_t **head);
+int _strcmp_custom(const char *str1, const char *str2);
 /*char *check_path(char *command[]);*/
-char *check_path(char *command);
+/*char *check_path(char *command);*/
+void fork_and_execute(char **argv_copy);
+char *check_path(char *command, char **builtins);
 char *_strcat(char *dest, char *source);
 #endif /*HEADER_SIMPLE_SHELL*/
