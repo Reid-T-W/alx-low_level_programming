@@ -155,6 +155,5 @@ char * _strcat(char *dest, char *source)
       dest_copy++;
     }
   *source_copy = '\0';
-  printf(" In destination %s\n",dest);
   return dest;
 }
