@@ -29,4 +29,11 @@ size_t print_dlistint(const dlistint_t *h);
  *Return: size of the linked list
  */
 size_t dlistint_len(const dlistint_t *h);
+/**
+ *add_dnodeint - adds a node to a doubly linked list
+ *@head: head of linked list
+ *@n: item to add to node
+ *Return: added node
+ **/
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
 #endif
