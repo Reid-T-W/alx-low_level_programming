@@ -10,6 +10,7 @@
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *head_copy;
+
 	while (head != NULL)
 	{
 		head_copy = head;
@@ -17,5 +18,4 @@ void free_dlistint(dlistint_t *head)
 		free(head_copy);
 	}
 	free(head);
-	return;
 }
