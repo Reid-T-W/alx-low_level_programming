@@ -70,4 +70,11 @@ int sum_dlistint(dlistint_t *head);
  *Return: node at index
  **/
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+/**
+ *delete_dnodeint_at_index - deletes node at given index
+ *@head: doubly linked list
+ *@index: required index
+ *Return: int
+ **/
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
 #endif
