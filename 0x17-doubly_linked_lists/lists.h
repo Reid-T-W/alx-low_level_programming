@@ -23,4 +23,10 @@ typedef struct dlistint_s
  *Return: size of the linked list
  */
 size_t print_dlistint(const dlistint_t *h);
+/**
+ *dlistint_len - number of elements in doubly linked list
+ *@h: doubly linked list
+ *Return: size of the linked list
+ */
+size_t dlistint_len(const dlistint_t *h);
 #endif
