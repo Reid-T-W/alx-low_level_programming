@@ -62,4 +62,12 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
  *Return: sum of all data
  **/
 int sum_dlistint(dlistint_t *head);
+/**
+ *insert_dnodeint_at_index - insert node at given index
+ *@h: doubly linked list
+ *@idx: required index
+ *@n: number to insert
+ *Return: node at index
+ **/
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
 #endif
