@@ -56,4 +56,10 @@ void free_dlistint(dlistint_t *head);
  *Return: node at index
  **/
 dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index);
+/**
+ *sum_dlistint - sum all elements of a linked list
+ *@head: head of linked list
+ *Return: sum of all data
+ **/
+int sum_dlistint(dlistint_t *head);
 #endif
