@@ -32,19 +32,49 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(node_del);
 		return (1);
 	}
-
 	while (node_index != NULL)
 	{
 		if (count == index)
 		{
-			node_del = node_index;
-			node_index->prev->next = node_index->next;
-			node_index->next->prev = node_index->prev;
-			free(node_del);
+			if (node_index->next != NULL)
+			{
+				handle_case1(node_index);
+			}
+			else
+			{
+				handle_case2(node_index);
+			}
 			return (1);
 		}
 		node_index = node_index->next;
 		count = count + 1;
 	}
 	return (-1);
+}
+/**
+ *handle_case1 - handles case one deletion
+ *@node_index: node
+ *Return: int
+ */
+void handle_case1(dlistint_t *node_index)
+{
+	dlistint_t *node_del;
+
+	node_del = node_index;
+	node_index->prev->next = node_index->next;
+	node_index->next->prev = node_index->prev;
+	free(node_del);
+}
+/**
+ *handle_case2 - handles case two deletion
+ *@node_index: node
+ *Return: int
+ */
+void handle_case2(dlistint_t *node_index)
+{
+	dlistint_t *node_del;
+
+	node_del = node_index;
+	node_index->prev->next = node_index->next;
+	free(node_del);
 }

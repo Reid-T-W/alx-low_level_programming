@@ -74,7 +74,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
  *delete_dnodeint_at_index - deletes node at given index
  *@head: doubly linked list
  *@index: required index
- *Return: int
+ y*Return: int
  **/
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index);
+/**
+ *handle_case1 - handles case one deletion
+ *@node_index: node
+ *Return: int
+ */
+void handle_case1(dlistint_t *node_index);
+/**
+ *handle_case2 - handles case two deletion
+ *@node_index: node
+ *Return: int
+ */
+void handle_case2(dlistint_t *node_index);
 #endif
