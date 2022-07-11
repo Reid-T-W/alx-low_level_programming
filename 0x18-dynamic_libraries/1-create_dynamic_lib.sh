@@ -1,5 +1,5 @@
 #!/bin/bash
-for i in *.c
+for i in ./*.c
 do
 	gcc "$i" -c -fPIC
 done
