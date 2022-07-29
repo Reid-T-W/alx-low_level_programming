@@ -3,6 +3,7 @@
 #include<string.h>
 /**
  *hash_table_get - gets the value associated with the key
+ *@ht: hash table
  *@key: key used to retrieve value
  *Return: returns the key's value
  */
@@ -21,9 +22,9 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		if (strcmp((list_iterator)->key, key) == 0)
 		{
 			value = (list_iterator)->value;
-			return value;
+			return (value);
 		}
 		list_iterator = list_iterator->next;
 	}
-	return NULL;
+	return (NULL);
 }
