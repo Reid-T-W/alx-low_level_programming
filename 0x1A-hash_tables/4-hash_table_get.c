@@ -14,6 +14,10 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t **get_location;
 	hash_node_t *list_iterator = NULL;
 
+	if (ht == NULL)
+	{
+		return (NULL);
+	}
 	index = key_index((const unsigned char *)key, ht->size);
 	get_location = ht->array + index;
 	list_iterator = *get_location;
