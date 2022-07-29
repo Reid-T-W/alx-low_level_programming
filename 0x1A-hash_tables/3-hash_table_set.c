@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	if (key == NULL)
+	if (key == NULL || key == "")
 	{
 		return (0);
 	}
