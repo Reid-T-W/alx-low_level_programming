@@ -14,6 +14,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node;
 	hash_node_t **insert_location;
 
+	if (ht == NULL || key == NULL)
+	{
+		return (0);
+	}
 	node = malloc(sizeof(*node));
 	if (node == NULL)
 	{
