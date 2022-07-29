@@ -30,6 +30,11 @@ void hash_table_print(const hash_table_t *ht)
 			list_iterator = *get_location;
 			printf("'%s': '%s'", list_iterator->key, list_iterator->value);
 			first_print = 0;
+			while (list_iterator->next != NULL)
+			{
+				list_iterator = list_iterator->next;
+				printf("'%s': '%s'", list_iterator->key, list_iterator->value);
+			}
 		}
 		index = index + 1;
 	}
