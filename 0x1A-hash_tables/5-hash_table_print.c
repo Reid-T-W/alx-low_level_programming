@@ -33,6 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 			while (list_iterator->next != NULL)
 			{
 				list_iterator = list_iterator->next;
+				printf(", ");
 				printf("'%s': '%s'", list_iterator->key, list_iterator->value);
 			}
 		}
