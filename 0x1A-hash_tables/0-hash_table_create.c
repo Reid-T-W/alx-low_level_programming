@@ -19,7 +19,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	table->size = size;
-	table->array = malloc(size * sizeof(*table->array));
+	table->array = malloc((size + 1) * sizeof(*table->array));
 	if ((table->array) == NULL)
 	{
 		return (NULL);
