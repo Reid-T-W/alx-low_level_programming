@@ -18,42 +18,34 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *dup_value;
 	char *dup_key;
 
-	if (ht == NULL)
-	{
-		return (0);
-	}
-	if (key == NULL || strcmp(key, "") == 0)
+	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
 	{
 		return (0);
 	}
 	node = malloc(sizeof(*node));
 	if (node == NULL)
-	{
 		return (0);
-	}
 	dup_key = strdup(key);
 	node->key = dup_key;
 	dup_value = strdup(value);
 	node->value = dup_value;
 	index = key_index((const unsigned char *)key, ht->size);
 	insert_location = ht->array + index;
-	if (insert_location == NULL)
+	if (*insert_location == NULL)
 	{
 		*insert_location = node;
 		return (1);
 	}
-	else
+
+	list_iterator = *insert_location;
+	while (list_iterator != NULL)
 	{
-		list_iterator = *insert_location;
-		while (list_iterator != NULL)
+		if (strcmp(list_iterator->key, node->key) == 0)
 		{
-			if (list_iterator->key == node->key)
-			{
-				list_iterator->value = node->value;
-				return (1);
-			}
-			list_iterator = list_iterator->next;
+			list_iterator->value = node->value;
+			return (1);
 		}
+		list_iterator = list_iterator->next;
 	}
 	node->next = *insert_location;
 	*insert_location = node;
