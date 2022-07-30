@@ -14,6 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *node;
 	hash_node_t **insert_location;
+	hash_node_t *list_iterator = NULL;
 	char *dup_value;
 	char *dup_key;
 
@@ -36,6 +37,24 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = dup_value;
 	index = key_index((const unsigned char *)key, ht->size);
 	insert_location = ht->array + index;
+	if (insert_location == NULL)
+	{
+		*insert_location = node;
+		return (1);
+	}
+	else
+	{
+		list_iterator = *insert_location;
+		while (list_iterator != NULL)
+		{
+			if (list_iterator->key == node->key)
+			{
+				list_iterator->value = node->value;
+				return (1);
+			}
+			list_iterator = list_iterator->next;
+		}
+	}
 	node->next = *insert_location;
 	*insert_location = node;
 	return (1);
