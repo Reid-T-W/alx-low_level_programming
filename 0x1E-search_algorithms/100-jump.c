@@ -1,6 +1,7 @@
 #include "search_algos.h"
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 
 /**
@@ -13,37 +14,41 @@
 int jump_search(int *array, size_t size, int value)
 {
 	size_t jump = sqrt(size);
-	size_t point = 0;
 	size_t prev = 0;
-
+	size_t point = 0;
+	int min;
 
 	if (array == NULL || size == 0)
 		return (-1);
 	/*Perform jump until value is greater than values in the array*/
-	while (value > array[point] && point < size)
+	printf("Value checked array[%ld] = [%d]\n", point, array[point]);
+	point = jump;
+	min = fmin(point, size);
+	while (array[min] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", point, array[point]);
 		prev = point;
 		point = point + jump;
+		if (prev >= size)
+			return (-1);
+		min = fmin(point, size);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, point);
 
-	/*Perform backward propagation until the element is found*/
+	/*Perform forward propagation until the element is found*/
 	while (array[prev] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		prev++;
-		if (prev >= size)
+		if (array[prev] != value && prev == fmin(point, size))
 			return (-1);
 	}
+
 	if (array[prev] == value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		return (prev);
 	}
 	else
-	{
-		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
 		return (-1);
-	}
 }
