@@ -13,13 +13,14 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t jump = sqrt(size);
+	size_t jump;
 	size_t prev = 0;
 	size_t point = 0;
 	int min;
 
 	if (array == NULL || size == 0)
 		return (-1);
+	jump = sqrt(size);
 	/*Perform jump until value is greater than values in the array*/
 	printf("Value checked array[%ld] = [%d]\n", point, array[point]);
 	point = jump;
