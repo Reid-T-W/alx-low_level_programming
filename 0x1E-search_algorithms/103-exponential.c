@@ -14,10 +14,10 @@ int exponential_search(int *array, size_t size, int value)
 	size_t exp;
 	size_t min;
 
-	if (array == 0)
+	if (array == 0 || size == 0)
 		return (-1);
 	exp = 1;
-	while (array[exp] < value && exp < size)
+	while (exp < size && array[exp] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", exp, array[exp]);
 		exp = exp * 2;
