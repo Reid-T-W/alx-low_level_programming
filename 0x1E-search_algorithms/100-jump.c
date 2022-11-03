@@ -3,6 +3,18 @@
 #include <math.h>
 #include <stdlib.h>
 
+/**
+ *find_min - finds min value
+ *@point: to be compared with size
+ *@size: to be compared with point
+ *Return: point if its greater than size or the opposite
+ */
+size_t find_min(size_t point, size_t size)
+{
+	if (point < size)
+		return (point);
+	return (size);
+}
 
 /**
  *jump_search - searches a value using jump search algo
@@ -24,13 +36,13 @@ int jump_search(int *array, size_t size, int value)
 	/*Perform jump until value is greater than values in the array*/
 	printf("Value checked array[%ld] = [%d]\n", point, array[point]);
 	point = jump;
-	min = fmin(point, size - 1);
+	min = find_min(point, size - 1);
 	while (array[min] < value && !(point >= size))
 	{
 		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
 		prev = point;
 		point = point + jump;
-		min = fmin(point, size - 1);
+		min = find_min(point, size - 1);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, point);
 
