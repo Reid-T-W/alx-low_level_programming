@@ -30,7 +30,7 @@ int jump_search(int *array, size_t size, int value)
 	size_t point = 0;
 	size_t min;
 
-	if (array == 0 || size <= 0)
+	if (array == NULL)
 		return (-1);
 	jump = sqrt(size);
 	/*Perform jump until value is greater than values in the array*/
