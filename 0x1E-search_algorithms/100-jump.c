@@ -24,7 +24,7 @@ int jump_search(int *array, size_t size, int value)
 	/*Perform jump until value is greater than values in the array*/
 	printf("Value checked array[%ld] = [%d]\n", point, array[point]);
 	point = jump;
-	min = fmin(point, size);
+	min = fmin(point, size - 1);
 	while (array[min] < value && !(point >= size))
 	{
 		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
@@ -32,7 +32,7 @@ int jump_search(int *array, size_t size, int value)
 		point = point + jump;
 		if (prev >= size)
 			return (-1);
-		min = fmin(point, size);
+		min = fmin(point, size - 1);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, point);
 
