@@ -45,19 +45,14 @@ int jump_search(int *array, size_t size, int value)
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, point);
 
 	/*Perform forward propagation until the element is found*/
-	while (array[prev] < value)
+	while (array[prev] <= (int) point && prev < size)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
-		prev++;
-		if (array[prev] != value && prev == fmin(point, size))
+		if (array[prev] == value)
+			return (prev);
+		if (prev == find_min(point, size))
 			return (-1);
+		prev++;
 	}
-
-	if (array[prev] == value)
-	{
-		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
-		return (prev);
-	}
-	else
-		return (-1);
+	return (-1);
 }
