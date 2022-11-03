@@ -28,6 +28,7 @@ int jump_search(int *array, size_t size, int value)
 	size_t jump;
 	size_t prev = 0;
 	size_t point = 0;
+	size_t min;
 
 	if (array == NULL)
 		return (-1);
@@ -35,24 +36,30 @@ int jump_search(int *array, size_t size, int value)
 	/*Perform jump until value is greater than values in the array*/
 	printf("Value checked array[%ld] = [%d]\n", point, array[point]);
 	point = jump;
-	while (array[find_min(point, size - 1)] < value && point < size)
+	min = find_min(point, size - 1);
+	while (array[min] < value && !(point >= size))
 	{
-		printf("Value checked array[%ld] = [%d]\n", find_min(point, size - 1),
-			array[find_min(point, size - 1)]);
+		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
 		prev = point;
 		point = point + jump;
+		min = find_min(point, size - 1);
 	}
 	printf("Value found between indexes [%ld] and [%ld]\n", prev, point);
 
 	/*Perform forward propagation until the element is found*/
-	while (array[prev] <= (int) point && prev < size)
+	while (array[prev] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
-		if (array[prev] == value)
-			return (prev);
-		if (prev == find_min(point, size))
-			return (-1);
 		prev++;
+		if (array[prev] != value && prev == fmin(point, size))
+			return (-1);
 	}
-	return (-1);
+
+	if (array[prev] == value)
+	{
+		printf("Value checked array[%ld] = [%d]\n", prev, array[prev]);
+		return (prev);
+	}
+	else
+		return (-1);
 }
